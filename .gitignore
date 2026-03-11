@@ -1,0 +1,39 @@
+# ASDF/Quicklisp build artifacts
+*.fasl
+*.fas
+*.dfsl
+*.pfsl
+*.d64fsl
+*.p64fsl
+*.lx64fsl
+*.lx32fsl
+*.dx64fsl
+*.dx32fsl
+*.fx64fsl
+*.fx32fsl
+*.sx64fsl
+*.sx32fsl
+*.wx64fsl
+*.wx32fsl
+*.abcl
+*.lib
+*.o
+
+# SBCL
+*.core
+
+# Editor backups
+*~
+\#*\#
+.#*
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.vscode/
