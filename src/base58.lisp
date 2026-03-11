@@ -20,7 +20,7 @@
 ;;; Constants
 ;;; ============================================================================
 
-(defconstant +base58-alphabet+
+(defparameter *base58-alphabet*
   "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
   "Bitcoin Base58 alphabet. Excludes 0, O, I, l to avoid visual ambiguity.")
 
@@ -32,7 +32,7 @@
   "Get the numeric value (0-57) of a Base58 character."
   (declare (type character char)
            (optimize (speed 3) (safety 1)))
-  (let ((pos (position char +base58-alphabet+)))
+  (let ((pos (position char *base58-alphabet*)))
     (unless pos
       (error "Invalid Base58 character: ~A" char))
     pos))
@@ -72,7 +72,7 @@ EXAMPLES:
       (let ((result '()))
         (loop while (plusp n)
               do (multiple-value-bind (q r) (floor n 58)
-                   (push (char +base58-alphabet+ r) result)
+                   (push (char *base58-alphabet* r) result)
                    (setf n q)))
 
         ;; Add leading '1's for leading zeros

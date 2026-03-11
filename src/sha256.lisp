@@ -95,7 +95,7 @@
 (defun sha256-transform (h block)
   "Process a 64-byte block, updating hash state H."
   (declare (type (simple-array (unsigned-byte 32) (8)) h)
-           (type (simple-array (unsigned-byte 8) (64)) block))
+           (type (vector (unsigned-byte 8)) block))
   (let ((w (make-array 64 :element-type '(unsigned-byte 32) :initial-element 0)))
     ;; Prepare message schedule
     (loop for i from 0 below 16

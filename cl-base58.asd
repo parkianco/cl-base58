@@ -9,6 +9,7 @@
   :serial t
   :components ((:file "package")
                (:module "src"
+                :serial t
                 :components ((:file "sha256")
                              (:file "base58"))))
   :in-order-to ((test-op (test-op #:cl-base58/test))))
