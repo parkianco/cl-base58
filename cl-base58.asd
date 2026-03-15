@@ -9,9 +9,10 @@
   :serial t
   :components ((:file "package")
                (:module "src"
-                :serial t
-                :components ((:file "sha256")
-                             (:file "base58"))))
+                :components ((:file "package")
+                             (:file "conditions" :depends-on ("package"))
+                             (:file "types" :depends-on ("package"))
+                             (:file "cl-base58" :depends-on ("package" "conditions" "types"))))))
   :in-order-to ((asdf:test-op (test-op #:cl-base58/test))))
 
 (asdf:defsystem #:cl-base58/test

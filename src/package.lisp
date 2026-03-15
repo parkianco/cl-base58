@@ -6,7 +6,10 @@
 (defpackage #:cl-base58
   (:use #:cl)
   (:export
-   #:integer-to-bytes
+   #:with-base58-timing
+   #:base58-batch-process
+   #:base58-health-check#:cl-base58-error
+   #:cl-base58-validation-error#:integer-to-bytes
    #:encode
    #:decode
    #:bytes-to-integer))
