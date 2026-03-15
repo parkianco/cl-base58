@@ -6,6 +6,8 @@
 (defpackage #:cl-base58
   (:use #:cl)
   (:export
+   #:deep-copy-list
+   #:group-by-count
    ;; Core Base58
    #:base58-encode
    #:base58-decode
