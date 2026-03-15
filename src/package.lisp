@@ -6,14 +6,26 @@
 (defpackage #:cl-base58
   (:use #:cl)
   (:export
-   #:identity-list
-   #:flatten
-   #:map-keys
-   #:now-timestamp
-#:with-base58-timing
-   #:base58-batch-process
-   #:base58-health-check#:cl-base58-error
-   #:cl-base58-validation-error#:integer-to-bytes
-   #:encode
-   #:decode
-   #:bytes-to-integer))
+   ;; Core Base58
+   #:base58-encode
+   #:base58-decode
+   #:base58-char-value
+   ;; Base58Check
+   #:base58check-encode
+   #:base58check-decode
+   ;; Address utilities
+   #:encode-address
+   #:decode-address
+   #:valid-address-p
+   ;; WIF utilities
+   #:wif-to-private-key
+   #:private-key-to-wif
+   ;; Custom alphabet
+   #:encode-with-alphabet
+   #:decode-with-alphabet
+   ;; SHA256 (from sha256.lisp)
+   #:sha256
+   #:sha256d
+   ;; Constants
+   #:+base58-alphabet+
+   #:+base64-url-alphabet+))

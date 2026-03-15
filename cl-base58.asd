@@ -7,12 +7,13 @@
   :license "Apache-2.0"
   :version "0.1.0"
   :serial t
-  :components ((:file "package")
-               (:module "src"
+             (:module "src"
                 :components ((:file "package")
                              (:file "conditions" :depends-on ("package"))
                              (:file "types" :depends-on ("package"))
-                             (:file "cl-base58" :depends-on ("package" "conditions" "types"))))))
+                             (:file "sha256" :depends-on ("package"))
+                             (:file "base58" :depends-on ("package" "conditions" "types" "sha256"))
+                             (:file "cl-base58" :depends-on ("package" "conditions" "types" "sha256" "base58"))))))
   :in-order-to ((asdf:test-op (test-op #:cl-base58/test))))
 
 (asdf:defsystem #:cl-base58/test
