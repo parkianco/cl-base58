@@ -6,6 +6,7 @@
 (defpackage #:cl-base58
   (:use #:cl)
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    ;; Core Base58
