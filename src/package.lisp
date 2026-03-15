@@ -6,7 +6,11 @@
 (defpackage #:cl-base58
   (:use #:cl)
   (:export
-   #:with-base58-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-base58-timing
    #:base58-batch-process
    #:base58-health-check#:cl-base58-error
    #:cl-base58-validation-error#:integer-to-bytes
